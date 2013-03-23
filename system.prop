@@ -1,0 +1,206 @@
+#
+# system.prop for UMTS Spyder
+#
+
+# directory assistance number
+ro.mot.ril.danlist=611,*611,#611
+#persist.ril.ecclist=911,*911,#911
+
+#CDMA-RIL modem mode;2 stands for UMTS
+persist.ril.modem.mode =2
+
+# USB modes allowed for UI and switching
+ro.ngp_available=1
+ro.modem_available=0
+
+# Default network type.3=NETWORK_MODE_GSM_UMTS ,auto mode
+ro.telephony.default_network=3
+ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html
+ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html
+
+# Enable HAC to also display Call Setting Menu Option.
+ro.mot.hw.HAC=1
+
+# Motorol,a6889c,02/Feb/2010,IKSHADOW-619
+# Proximity Sensor feature
+# 0 disable
+# 1 enable
+persist.mot.proximity.touch=1
+# End IKSHADOW-619
+
+#inphone calibration backup support
+ro.mot.hw.calibratedImager=1
+
+persist.mot.usb.mediasync = 1
+# persist.usb.android_config = 1
+
+#Proximity sensor debounce time
+mot.proximity.delay=450
+# disable touch below 60 pixels
+mot.proximity.distance=60
+
+# Enable NITZ secure time
+persist.ril.features = 0x102
+# Time in secs to sleep between retries
+persist.ril.mux.sleep = 2
+# QMI over SPI or USB
+persist.ril.qmi.overspi = yes
+
+# The number of milli-seconds to delay between call_ring notifications
+ro.telephony.call_ring.delay = 3000
+
+# ro.cdma.data_retry_config:
+#   Configure the retry timers slightly longer than BP throttling timers to ensure
+#   the retry goes through. See RetryManager.java for syntax.
+#
+#   BP throttling timers are:
+#     the first retry timer:  0,
+#     the second retry timer: 0,
+#     the third retry timer:  1min + random(0-9) * 6sec,
+#     the forth retry timer:  2min + random(0-9) * 6sec,
+#     the fifth retry timer:  8min + random(0-9) * 6sec,
+#     the sixth retry timer: 15min + random(0-9) * 6sec.
+#     all subsequent retry timers: the last timer, i.e, 15min + random(0-9) * 6sec.
+
+ro.cdma.data_retry_config = default_randomization=2000,0,0,120000,180000,540000,960000
+
+
+#BEGIN Motorola, nfjb73, 21-jun-2010,
+# this is for feature 34386, other features for vzw global phone
+# could use this property too. IKMAIN-732
+#1 this is verizon wireless globle phone
+#0 this is not verizon wireless globle phone
+ro.mot.phonemode.vzwglobalphone=0
+# END Motorola, nfjb73, 21-jun-2010, IKMAIN-732
+
+
+#BEGIN Motorola, nfjb73, 21-jun-2010,
+# this is for feature 34386, other features for vzw global phone
+# could use this property too. IKMAIN-732
+#1 this is verizon wireless globle phone
+#0 this is not verizon wireless globle phone
+ro.mot.phonemode.vzwglobalphone=0
+# END Motorola, nfjb73, 21-jun-2010, IKMAIN-732
+
+
+# BEGIN Motorola, qmfd78, 14-Jul-2010, IKMAIN-884
+# BEGIN Motorola. xwg843,29-Jul-2011,IKSTABLE6-3962
+# GSM SMS traffic needs to be routed/sent through North America SMSC.
+# This is part of the VZW World-phone Feature. SMS are always sent to a US SMSC and then injected
+# into that network. This allows for billing and give the user the impression that the device is
+# still in the US.
+ro.telephony.gsm-routes-us-smsc = 0
+# END Motorola, xwg843, 29-Jul-2011, IKSTABLE6-3962
+# END  Motorola, qmfd78, 14-Jul-2010, IKMAIN-884
+
+# BEGIN Motorola, a22600 qmfd78, 16-Jul-2010, IKDROIDPRO-423
+# For north american cdma operators, this flag should be 1.
+# It enables number mangling when nbpcd (plus code dialing) is not supported.
+# This is part of the VZW World-phone Feature.
+ro.cdma.home.operator.isnan=1
+# END Motorola, a22600 qmfd78, 16-Jul-2010, IKDROIDPRO-423
+
+# EDM feature - IKDROIDPRO-381 - Start
+ro.mot.dpmext = true
+# EDM feature - IKDROIDPRO-381 -End
+
+# BEGIN Moto, IKSTABLETWO-689, nfjb73, for 34387,33857
+# when phone in Global mode, FW need to know the last phone mode beore power off
+# when phone power up, it would use the right mode to avoid switch
+# 1 stands for gsm
+persist.radio.ap.phonetype=1
+# END IKSTABLETWO-689
+
+# true when phone launches UI successfully, default is flase
+sys.mot.ui.launched=false
+
+ro.mot.bindervm.config=120
+
+# ERI feature, For VZW Only
+# 0 OFF
+# 1 ON
+ro.mot.eri=0
+
+# BEGIN Motorola, a22976, 25-Feb-2010, IKSHADOW-702, FID 31841
+# VZW Requirement Specifications: NETWORK BASED PLUS CODE DIALING
+# 0 disable
+# 1 enable
+ro.cdma.nbpcd=0
+# END IKSHADOW-702
+
+
+# BEGIN Motorola, hwqc67, 22-Jun-2011, IKLOCSEN-317, FID 36426
+# Gps Smart Battery Savings
+# (depends on sensor hub)
+# 0 disable
+# 1 enable
+persist.mot.gps.smart_battery=1
+# END IKLOCSEN-317
+
+# Motorola, IKHALFMWK-3, w001091
+# Feature 32711, deep sleep mode support
+ro.mot.deep.sleep.supported=true
+
+# BEGIN Motorola, a22543, 16-Aug-2011, IKSTABLE6-8304
+persist.dbg.kwdt.report=0
+# END IKSTABLE6-8304
+
+# Fast dormancy support
+ro.mot.ds.fastdormancy.disable=false
+
+#turn off Event Report
+persist.ril.event.report=0
+
+# BEGIN Motorola, atzakis, 12-Oct-2011, IKSTABLE6-18830
+ro.mot.hw.navkeyboard.devname=cy8c201xx
+# END IKSTABLE6-18830
+
+# BEGIN Motorola abp095, 4-Jan-2012, IKHSS7-2427 - Thumbnail property change
+com.motorola.cg.lowres=1
+com.motorola.cg.tnWidth=160
+com.motorola.cg.tnHeight=160
+com.motorola.cg.tndisplay=1
+# END IKHSS7-2427
+
+#When true, it forces camera to haver shutter tones
+ro.camera.sound.forced=1
+
+radio.mtu.size=1500
+
+# system prop for requesting Master role in incoming Bluetooth connection.
+#
+ro.bluetooth.request.master=true
+#
+# system prop for Bluetooth Auto connect for remote initated connections
+#
+ro.bluetooth.remote.autoconnect=true
+
+ro.com.google.clientidbase=android-motorola
+ro.com.google.clientidbase.ms=android-motorola
+ro.com.google.clientidbase.am=android-motorola
+ro.com.google.clientidbase.gmm=android-motorola
+ro.com.google.clientidbase.yt=android-motorola
+persist.ril.mux.ttydevice=/dev/ttyO0
+persist.ril.modem.ttydevice=/dev/usb/tty2-1:1.4
+persist.ril.tcmd.ttydevice=/dev/usb/tty2-1:1.3
+persist.ril.diag.ttydevice=/dev/usb/tty2-1:1.0
+persist.ril.features=0x182
+rild.libpath=/system/lib/moto-ril-multimode.so
+gsm.sim.mot.simswap=1
+ro.com.google.gmsversion=4.1_r3
+ro.mot.phonemode.vzw4gphone=0
+cdma_ril.libpath=/system/lib/libmoto_ril.so
+ro.mot.setuptype=2
+ro.mot.internalsdcard=1
+#ro.setupwizard.mode=DISABLED
+ro.mot.dpmext=true
+ro.com.google.clientid=android-motorola
+ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html
+ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html
+ro.mot.hidden_keyboards=evfwd
+ro.com.google.locationfeatures=1
+
+# Additions
+ro.gsm.2nd_data_retry_config=max_retries=infinite,default_randomization=2000,0,0,80000,125000,485000,905000
+ro.gsm.data_retry_config=max_retries=infinite,default_randomization=2000,0,0,80000,125000,485000,905000
+ro.telephony.ril.v3=writeaidonly,signalstrength
