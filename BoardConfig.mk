@@ -37,3 +37,7 @@ BOARD_PAGE_SIZE := 0x4096
 # Kernel Build
 TARGET_KERNEL_SOURCE := kernel/motorola/omap4-common
 TARGET_KERNEL_CONFIG := mapphone_spyder_defconfig
+
+ifdef MK_RELEASE
+WITH_DEXPREOPT := true
+endif
