@@ -23,8 +23,8 @@
 ######################
 
 ## Example of a dual card setup
-dev_mount sdcard /storage/sdcard0 25 /devices/platform/omap/omap_hsmmc.1/mmc_host/mmc1
-dev_mount sdcard-ext /storage/sdcard1 auto /devices/platform/omap/omap_hsmmc.0/mmc_host/mmc0
+dev_mount sdcard-ext /storage/sdcard0 25 /devices/platform/omap/omap_hsmmc.1/mmc_host/mmc1
+dev_mount sdcard /storage/sdcard1 auto /devices/platform/omap/omap_hsmmc.0/mmc_host/mmc0
 
 # flash drive connection through hub connected to USB3
 #dev_mount usb0 /storage/usb0 auto /devices/platform/omap/musb-omap2430/musb-hdrc/usb3/3-1/3-1.1.1
