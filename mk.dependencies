@@ -6,6 +6,14 @@
   {
     "repository": "android_vendor_motorola_umts_spyder",
     "target_path": "vendor/motorola/umts_spyder"
+  },
+  {
+    "repository": "android_device_motorola_omap4-common",
+    "target_path": "device/motorola/omap4-common"
+  },
+  {
+    "repository": "android_vendor_motorola_omap4-common",
+    "target_path": "vendor/motorola/omap4-common"
   }
 ]
 
